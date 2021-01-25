@@ -1,14 +1,14 @@
-# Conditional operators: if, '?'
+# Bedingungsoperatoren: if, '?'
 
-Sometimes, we need to perform different actions based on different conditions.
+Manchmal müssen wir unterschiedliche Aktionen ausführen, abhängig von verschiedenen Bedingungen.
 
-To do that, we can use the `if` statement and the conditional operator `?`, that's also called a "question mark" operator.
+Um dies zu tun können wir die `if` Anweisung und den Bedingungsoperator `?` verwenden, der auch "Fragezeichen"-Operator genannt wird.
 
-## The "if" statement
+## Die "if" Anweisung
 
-The `if(...)` statement evaluates a condition in parentheses and, if the result is `true`, executes a block of code.
+Die `if(...)` Anweisung wertet eine Bedingung in Klammern aus und führt, falls das Ergebis `true` ist, einen Code-Block aus.
 
-For example:
+Zum Beispiel:
 
 ```js run
 let year = prompt('In which year was ECMAScript-2015 specification published?', '');
@@ -18,9 +18,9 @@ if (year == 2015) alert( 'You are right!' );
 */!*
 ```
 
-In the example above, the condition is a simple equality check (`year == 2015`), but it can be much more complex.
+In obigen Beispiel ist die Bedingung eine einfache Gleichheitsprüfung (`year == 2015`), aber sie kann auch weitaus komplexer sein.
 
-If we want to execute more than one statement, we have to wrap our code block inside curly braces:
+Falls wir mehr als eine Anweisung ausführen wollen, müssen wir unseren Code-Block in geschweifte Klammern einschließen:
 
 ```js
 if (year == 2015) {
@@ -29,7 +29,7 @@ if (year == 2015) {
 }
 ```
 
-We recommend wrapping your code block with curly braces `{}` every time you use an `if` statement, even if there is only one statement to execute. Doing so improves readability.
+Wir empfehlen, deine Code-Blöcke jedes Mal in geschweifte Klammern `{}` einzuschließen wenn du eine `if` Anweisung verwendest, selbst wenn nur eine Anweisung ausgeführt wird. Dieses Vorgehen erhöht die Lesbarkeit.
 
 ## Boolean conversion
 
