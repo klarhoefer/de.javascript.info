@@ -31,16 +31,16 @@ if (year == 2015) {
 
 Wir empfehlen, deine Code-Blöcke jedes Mal in geschweifte Klammern `{}` einzuschließen wenn du eine `if` Anweisung verwendest, selbst wenn nur eine Anweisung ausgeführt wird. Dieses Vorgehen erhöht die Lesbarkeit.
 
-## Boolean conversion
+## Boolean Umwandlung
 
-The `if (…)` statement evaluates the expression in its parentheses and converts the result to a boolean.
+Die `if (…)` Anweisung wertet den Ausdruck in Klammern aus und wandelt das Ergebnis in ein Boolean.
 
-Let's recall the conversion rules from the chapter <info:type-conversions>:
+Erinnern wir uns an die Umwandlungsregeln aus dem Kapitel <info:type-conversions>:
 
-- A number `0`, an empty string `""`, `null`, `undefined`, and `NaN` all become `false`. Because of that they are called "falsy" values.
-- Other values become `true`, so they are called "truthy".
+- Eine Zahl `0`, eine leere Zeichenkette `""`, `null`, `undefined`, und `NaN` werden alle `false`. Deswegen werden sie "falsy" Werte genannt.
+- Andere Werte werden `true`, folglich heißen sie "truthy".
 
-So, the code under this condition would never execute:
+Somit würde der Code unter dieser Bedingung niemals ausgeführt werden:
 
 ```js
 if (0) { // 0 is falsy
@@ -48,7 +48,7 @@ if (0) { // 0 is falsy
 }
 ```
 
-...and inside this condition -- it always will:
+...und innerhalb dieser Bedingung -- wird er es stets:
 
 ```js
 if (1) { // 1 is truthy
@@ -56,7 +56,7 @@ if (1) { // 1 is truthy
 }
 ```
 
-We can also pass a pre-evaluated boolean value to `if`, like this:
+Wir können auch vor-ausgewertete boolsche Werte an `if` übergeben, wie hier:
 
 ```js
 let cond = (year == 2015); // equality evaluates to true or false
@@ -66,11 +66,11 @@ if (cond) {
 }
 ```
 
-## The "else" clause
+## Die "else" Klausel
 
-The `if` statement may contain an optional "else" block. It executes when the condition is false.
+Die `if` Anweisung darf einen optionalen "else"-Block enthalten. Er wird ausgeführt, wenn die Bedinung unwahr ist.
 
-For example:
+Zum Beispiel:
 ```js run
 let year = prompt('In which year was the ECMAScript-2015 specification published?', '');
 
@@ -81,11 +81,11 @@ if (year == 2015) {
 }
 ```
 
-## Several conditions: "else if"
+## Mehrere Bedinungen: "else if"
 
-Sometimes, we'd like to test several variants of a condition. The `else if` clause lets us do that.
+Manchmal möchten wir mehrere Varianten einer Bedingung prüfen. Die `else if` Klausel lässt uns dies tun.
 
-For example:
+Zum Beispiel:
 
 ```js run
 let year = prompt('In which year was the ECMAScript-2015 specification published?', '');
@@ -99,15 +99,15 @@ if (year < 2015) {
 }
 ```
 
-In the code above, JavaScript first checks `year < 2015`. If that is falsy, it goes to the next condition `year > 2015`. If that is also falsy, it shows the last `alert`.
+In obigen Code prüft JavaScript erst `year < 2015`. Ist dies _falsy_ (s.o.), springt es zur nächsten Bedingung `year > 2015`. Ist dies ebenfalls _falsy_, zeigt es den letzten `alert` an.
 
-There can be more `else if` blocks. The final `else` is optional.
+Es kann mehrere `else if` Blöcke geben. Das letzte `else` ist optional.
 
-## Conditional operator '?'
+## Bedingungsoperator '?'
 
-Sometimes, we need to assign a variable depending on a condition.
+Manchmal müssen wir einer Variablen eine Wert abhängig von einer Bedingung zuweisen.
 
-For instance:
+Beispielsweise:
 
 ```js run no-beautify
 let accessAllowed;
@@ -124,24 +124,25 @@ if (age > 18) {
 alert(accessAllowed);
 ```
 
-The so-called "conditional" or "question mark" operator lets us do that in a shorter and simpler way.
+Der sogenannte "Bedingungs" oder "Fragezeichen"-Operator lässt uns das auf einer kürzeren und einfacheren Weise tun.
 
-The operator is represented by a question mark `?`. Sometimes it's called "ternary", because the operator has three operands. It is actually the one and only operator in JavaScript which has that many.
+Der Operator wird mittels eines Fragezeichen `?` dargestellt. Manchmal wird er als "ternary" bezeichnet, weil der Operator drei Operanden hat. Er ist sogar der einzige Operator in JavaScript, der so viele hat.
 
-The syntax is:
+Die Syntax ist:
 ```js
 let result = condition ? value1 : value2;
 ```
 
 The `condition` is evaluated: if it's truthy then `value1` is returned, otherwise -- `value2`.
+Die `condition` wird ausgewertet: ist sie _truthy_ wird `value1` zurück gegeben, anderenfalls -- `value2`.
 
-For example:
+Zum Beispiel:
 
 ```js
 let accessAllowed = (age > 18) ? true : false;
 ```
 
-Technically, we can omit the parentheses around `age > 18`. The question mark operator has a low precedence, so it executes after the comparison `>`.
+Technisch können wir die Klammern um `age > 18` weglassen. Der Fragezeichenoperator hat eine niedrige Präzedenz, somit wird er nach dem Vergleich `>` ausgeführt.
 
 This example will do the same thing as the previous one:
 
